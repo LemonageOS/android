@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+
+  <remote
+    name="lemonage"
+    fetch="https://github.com/LemonageOS"
+    revision="lineage-18.1" />
+
+  <project path="android" name="android_manifest" remote="lemonage" />
+  <project path="art" name="android_art" remote="lemonage" />
+  <project path="build/make" name="android_build" remote="lemonage" >
+    <copyfile src="core/root.mk" dest="Makefile" />
+    <linkfile src="CleanSpec.mk" dest="build/CleanSpec.mk" />
+    <linkfile src="buildspec.mk.default" dest="build/buildspec.mk.default" />
+    <linkfile src="core" dest="build/core" />
+    <linkfile src="envsetup.sh" dest="build/envsetup.sh" />
+    <linkfile src="target" dest="build/target" />
+    <linkfile src="tools" dest="build/tools" />
+  </project>
+  <project path="packages/apps/404Launcher" name="android_packages_apps_404Launcher" remote="lemonage" revision="rippa" />
+  <project path="packages/apps/Recorder" name="android_packages_apps_Recorder" remote="lemonage" revision="lineage-20.0" />
+  <project path="packages/apps/SettingsIntelligence" name="android_packages_apps_SettingsIntelligence" remote="lemonage" revision="lineage-20.0" />
+  <project path="packages/services/Car" name="android_packages_services_Car" remote="lemonage" />
+
+</manifest>
